@@ -7,6 +7,9 @@ feature 'Jobseeker interactions' do
   scenario 'get resume feedback' do
     click_on 'Resume feedback'
     expect(page).to have_content 'Get resume feedback'
+
+    fill_in 'Name', with: 'Sandie Go'
+    fill_in 'Email', with: 'sandie@go.com'
   end
 
   scenario 'answer common questions' do
