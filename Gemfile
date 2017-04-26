@@ -61,7 +61,6 @@ group :development do
   gem 'better_errors'
   gem 'foreman'
   gem 'html2haml'
-  gem 'hub', :require=>nil
   gem 'rails_apps_pages'
   gem 'rails_apps_testing'
   gem 'rails_layout'
