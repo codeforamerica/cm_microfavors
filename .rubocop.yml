@@ -1,5 +1,17 @@
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+BlockComments:
+  Enabled: false
+
 AllCops:
-  RunRailsCops: true
+  Enabled: true
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
