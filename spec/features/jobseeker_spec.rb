@@ -19,6 +19,6 @@ feature 'Jobseeker interactions' do
 
   scenario 'am i qualified' do
     click_on 'Evaluate Job Qualifications'
-    expect(page).to have_content 'Find out if you are qualified'
+    expect(page).to have_content 'Job Qualifications Help'
   end
 end
