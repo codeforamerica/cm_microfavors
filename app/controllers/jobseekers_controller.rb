@@ -1,10 +1,4 @@
 class JobseekersController < ApplicationController
-  def resume_feedback
-    @header = 'Get resume feedback'
-
-    ask
-  end
-
   def cover_letter_feedback
     @header = 'Cover Letter Help'
 

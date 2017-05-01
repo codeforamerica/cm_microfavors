@@ -6,10 +6,10 @@ feature 'Jobseeker interactions' do
 
   scenario 'get resume feedback' do
     click_on 'Resume Feedback'
-    expect(page).to have_content 'Get resume feedback'
+    expect(page).to have_content 'Resume Help'
 
-    fill_in 'Name', with: 'Sandie Go'
-    fill_in 'Email', with: 'sandie@go.com'
+    # fill_in 'Name', with: 'Sandie Go'
+    # fill_in 'Email', with: 'sandie@go.com'
   end
 
   scenario 'answer common questions' do
