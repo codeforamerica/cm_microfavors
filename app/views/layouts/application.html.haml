@@ -6,6 +6,5 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
   %body
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+    = render 'layouts/messages'
+    = yield
