@@ -13,8 +13,8 @@ feature 'Jobseeker interactions' do
   end
 
   scenario 'answer common questions' do
-    click_on 'Common questions'
-    expect(page).to have_content 'Answer common questions'
+    click_on 'Cover Letter Feedback'
+    expect(page).to have_content 'Cover Letter Help'
   end
 
   scenario 'am i qualified' do

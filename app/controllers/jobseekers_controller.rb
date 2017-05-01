@@ -5,8 +5,8 @@ class JobseekersController < ApplicationController
     ask
   end
 
-  def common_questions
-    @header = 'Answer common questions'
+  def cover_letter_feedback
+    @header = 'Cover Letter Help'
 
     ask
   end
