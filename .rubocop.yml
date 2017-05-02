@@ -11,7 +11,6 @@ BlockComments:
   Enabled: false
 
 AllCops:
-  Enabled: true
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
