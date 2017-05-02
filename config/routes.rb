@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get '/am_i_qualified', to: 'jobseekers#am_i_qualified'
   get '/ask', to: 'jobseekers#ask'
 
+  post '/upload', to: 'jobseekers#upload'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
