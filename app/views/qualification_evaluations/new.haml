@@ -1,15 +1,20 @@
+-#= javascript_include_tag 'dropzone-config'
+
 %h3 Provide Your Resume and Desired Job
 
-= simple_form_for(:upload, url: 'upload', html: {class: 'dropzone'}) do |f|
-  .dz-message.h3 Drop resume here or click to upload.
-%br
-
-= simple_form_for(@qualification_evaluation, html: { class: 'form-horizontal' },
+= simple_form_for(@qualification_evaluation, html: { id: :dropzone_form, class: 'dropzone form-horizontal' },
   wrapper: :horizontal_form,
   wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes,
                       radio_buttons: :horizontal_radio_and_checkboxes,
                       file: :horizontal_file_input,
                       boolean: :horizontal_boolean }) do |f|
+
+  .dotted-border
+    .dropzone-previews
+    .dz-message.mvl.text-center.h3 Drop resume here or click to upload.
+
+  %br
+
   = f.input :name
   = f.input :email
   = f.input :job_posting
