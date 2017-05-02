@@ -1,0 +1,2 @@
+class ResumeEvaluationsController < ApplicationController
+end

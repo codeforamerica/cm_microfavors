@@ -1,0 +1,2 @@
+class QualificationEvaluationsController < ApplicationController
+end
