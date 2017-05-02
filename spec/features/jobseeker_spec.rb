@@ -12,10 +12,10 @@ feature 'Jobseeker interactions' do
 
     expect(page).to have_content 'Provide Your Resume'
 
-    click_submit
+    fill_in 'Name', with: 'Sandie Go'
+    fill_in 'Email', with: 'sandie@go.com'
 
-    # fill_in 'Name', with: 'Sandie Go'
-    # fill_in 'Email', with: 'sandie@go.com'
+    click_submit
   end
 
   scenario 'answer common questions' do
@@ -25,6 +25,9 @@ feature 'Jobseeker interactions' do
     click_get_help
 
     expect(page).to have_content 'Provide Your Cover Letter'
+
+    fill_in 'Name', with: 'Sandie Go'
+    fill_in 'Email', with: 'sandie@go.com'
 
     click_submit
   end
@@ -36,6 +39,10 @@ feature 'Jobseeker interactions' do
     click_get_help
 
     expect(page).to have_content 'Provide Your Resume and Desired Job'
+
+    fill_in 'Name', with: 'Sandie Go'
+    fill_in 'Email', with: 'sandie@go.com'
+    fill_in 'Job posting', with: 'carpenter.com/jobs'
 
     click_submit
   end
