@@ -9,6 +9,9 @@ feature 'Jobseeker interactions' do
     expect(page).to have_content 'Resume Help'
 
     click_get_help
+
+    expect(page).to have_content 'Provide Your Resume'
+
     # fill_in 'Name', with: 'Sandie Go'
     # fill_in 'Email', with: 'sandie@go.com'
   end
@@ -18,6 +21,8 @@ feature 'Jobseeker interactions' do
     expect(page).to have_content 'Cover Letter Help'
 
     click_get_help
+
+    expect(page).to have_content 'Provide Your Cover Letter'
   end
 
   scenario 'am i qualified' do
@@ -25,13 +30,13 @@ feature 'Jobseeker interactions' do
     expect(page).to have_content 'Job Qualifications Help'
 
     click_get_help
+
+    expect(page).to have_content 'Provide Your Resume and Desired Job'
   end
 
   private
 
   def click_get_help
     click_on 'Get Help'
-
-    expect(page).to have_content 'Provide Your Information'
   end
 end
