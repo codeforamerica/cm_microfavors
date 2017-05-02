@@ -4,7 +4,7 @@
   .dz-message.h3 Drop cover letter here or click to upload.
 %br
 
-= simple_form_for(:question, html: { class: 'form-horizontal' },
+= simple_form_for(@cover_letter_evaluation, html: { class: 'form-horizontal' },
   wrapper: :horizontal_form,
   wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes,
                       radio_buttons: :horizontal_radio_and_checkboxes,

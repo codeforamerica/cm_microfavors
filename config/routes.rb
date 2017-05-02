@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root to: 'jobseekers#index'
   get '/ask', to: 'jobseekers#ask'
 
-  resources :resume_evaluations, only: %i[index new]
-  resources :cover_letter_evaluations, only: %i[index new]
-  resources :qualification_evaluations, only: %i[index new]
+  resources :resume_evaluations, only: %i[index new create]
+  resources :cover_letter_evaluations, only: %i[index new create]
+  resources :qualification_evaluations, only: %i[index new create]
 
   post '/upload', to: 'jobseekers#upload'
 
