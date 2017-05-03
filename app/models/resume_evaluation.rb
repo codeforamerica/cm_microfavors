@@ -5,4 +5,5 @@ class ResumeEvaluation
   attr_accessor :name, :email, :resume
 
   validates_presence_of :name, :email, :resume
+  validates_email_format_of :email
 end
