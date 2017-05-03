@@ -16,6 +16,6 @@ class ResumeEvaluationsController < ApplicationController
   private
 
   def resume_evaluation_params
-    params.require(:resume_evaluation).permit(:name, :email)
+    params.require(:resume_evaluation).permit(:name, :email, :resume)
   end
 end

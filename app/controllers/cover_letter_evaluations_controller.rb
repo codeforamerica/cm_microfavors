@@ -16,6 +16,6 @@ class CoverLetterEvaluationsController < ApplicationController
   private
 
   def cover_letter_evaluation_params
-    params.require(:cover_letter_evaluation).permit(:name, :email)
+    params.require(:cover_letter_evaluation).permit(:name, :email, :cover_letter)
   end
 end

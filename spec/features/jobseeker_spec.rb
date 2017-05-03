@@ -1,4 +1,6 @@
 feature 'Jobseeker interactions' do
+  FILE_PATH = File.absolute_path('./spec/features/materials.pdf')
+
   before do
     visit root_path
     expect(page).to have_content 'Need help in a hurry with your job search?'
@@ -15,10 +17,12 @@ feature 'Jobseeker interactions' do
     fill_in 'Name', with: 'Sandie Go'
     fill_in 'Email', with: 'sandie@go.com'
 
+    attach_file('Resume', FILE_PATH)
+
     click_submit
   end
 
-  scenario 'answer common questions' do
+  scenario 'cover letter feedback' do
     click_on 'Cover Letter Feedback'
     expect(page).to have_content 'Cover Letter Help'
 
@@ -28,6 +32,8 @@ feature 'Jobseeker interactions' do
 
     fill_in 'Name', with: 'Sandie Go'
     fill_in 'Email', with: 'sandie@go.com'
+
+    attach_file('Cover letter', FILE_PATH)
 
     click_submit
   end
@@ -43,6 +49,8 @@ feature 'Jobseeker interactions' do
     fill_in 'Name', with: 'Sandie Go'
     fill_in 'Email', with: 'sandie@go.com'
     fill_in 'Job posting', with: 'carpenter.com/jobs'
+
+    attach_file('Resume', FILE_PATH)
 
     click_submit
   end

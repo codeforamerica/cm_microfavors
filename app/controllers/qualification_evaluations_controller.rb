@@ -16,6 +16,6 @@ class QualificationEvaluationsController < ApplicationController
   private
 
   def qualification_evaluation_params
-    params.require(:qualification_evaluation).permit(:name, :email, :job_posting)
+    params.require(:qualification_evaluation).permit(:name, :email, :job_posting, :resume)
   end
 end
