@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Jobseeker interactions' do
   FILE_PATH = File.absolute_path('./spec/features/materials.pdf')
 

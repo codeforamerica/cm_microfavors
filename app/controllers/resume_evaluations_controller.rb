@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResumeEvaluationsController < ApplicationController
   def new
     @resume_evaluation = ResumeEvaluation.new

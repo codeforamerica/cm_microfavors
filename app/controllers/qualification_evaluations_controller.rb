@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QualificationEvaluationsController < ApplicationController
   def new
     @qualification_evaluation = QualificationEvaluation.new
