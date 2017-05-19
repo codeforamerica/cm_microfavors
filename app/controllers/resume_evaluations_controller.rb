@@ -15,6 +15,10 @@ class ResumeEvaluationsController < ApplicationController
     end
   end
 
+  def show
+    @resume_evaluation = ResumeEvaluation.find(params[:id])
+  end
+
   private
 
   def resume_evaluation_params
