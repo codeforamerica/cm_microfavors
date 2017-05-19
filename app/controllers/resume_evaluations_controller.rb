@@ -8,7 +8,7 @@ class ResumeEvaluationsController < ApplicationController
   def create
     @resume_evaluation = ResumeEvaluation.new(resume_evaluation_params)
 
-    if @resume_evaluation.valid?
+    if @resume_evaluation.save
       render :'jobseekers/next'
     else
       render :new

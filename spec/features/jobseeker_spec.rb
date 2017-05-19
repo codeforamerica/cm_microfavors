@@ -8,7 +8,10 @@ feature 'Jobseeker interactions' do
     expect(page).to have_content 'Need help in a hurry with your job search?'
   end
 
-  scenario 'get resume feedback' do
+  scenario 'getting resume feedback' do
+    name = Faker::Name.name
+    email = Faker::Internet.email
+
     click_on 'Resume Feedback'
     expect(page).to have_content 'Resume Help'
 
@@ -16,12 +19,19 @@ feature 'Jobseeker interactions' do
 
     expect(page).to have_content 'Provide Your Resume'
 
-    fill_in 'Name', with: 'Sandie Go'
-    fill_in 'Email', with: 'sandie@go.com'
+    fill_in 'Name', with: name
+    fill_in 'Email', with: email
 
     attach_file('Resume', FILE_PATH)
 
     click_submit
+
+    resume_evaluation = ResumeEvaluation.find_by_name(name)
+
+    visit resume_evaluation_path(resume_evaluation.id)
+
+    expect(page).to have_content 'Microfavors Request'
+    expect(page).to have_content "Name: #{resume_evaluation.name}"
   end
 
   scenario 'cover letter feedback' do
