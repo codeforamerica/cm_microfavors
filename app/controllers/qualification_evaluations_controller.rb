@@ -15,6 +15,10 @@ class QualificationEvaluationsController < ApplicationController
     end
   end
 
+  def show
+    @qualification_evaluation = QualificationEvaluation.find(params[:id])
+  end
+
   private
 
   def qualification_evaluation_params

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen string_literal: true
-
 feature 'case manager interactions' do
   scenario 'case manager opens a resume help request' do
     resume_evaluation = FactoryGirl.create(:resume_evaluation)
@@ -17,5 +15,13 @@ feature 'case manager interactions' do
     visit "/cover_letter_evaluations/#{cover_letter_evaluation.id}"
     expect(page).to have_content 'Microfavors Request'
     expect(page).to have_content "Name: #{cover_letter_evaluation.name}"
+  end
+
+  scenario 'case manager opens a qualification evaluation request' do
+    qualification_evaluation = FactoryGirl.create(:qualification_evaluation)
+
+    visit "/qualification_evaluations/#{qualification_evaluation.id}"
+    expect(page).to have_content 'Microfavors Request'
+    expect(page).to have_content "Name: #{qualification_evaluation.name}"
   end
 end
