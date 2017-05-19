@@ -15,6 +15,10 @@ class CoverLetterEvaluationsController < ApplicationController
     end
   end
 
+  def show
+    @cover_letter_evaluation = CoverLetterEvaluation.find(params[:id])
+  end
+
   private
 
   def cover_letter_evaluation_params
