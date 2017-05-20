@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519190705) do
+ActiveRecord::Schema.define(version: 20170519223404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 20170519190705) do
   create_table "resume_evaluations", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "resume"
+    t.string "resume_file_name"
+    t.string "resume_content_type"
+    t.integer "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
 end
