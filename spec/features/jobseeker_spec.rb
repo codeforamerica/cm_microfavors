@@ -35,6 +35,9 @@ feature 'Jobseeker interactions' do
   end
 
   scenario 'cover letter feedback' do
+    name = Faker::Name.name
+    email = Faker::Internet.email
+
     click_on 'Cover Letter Feedback'
     expect(page).to have_content 'Cover Letter Help'
 
@@ -42,12 +45,19 @@ feature 'Jobseeker interactions' do
 
     expect(page).to have_content 'Provide Your Cover Letter'
 
-    fill_in 'Name', with: 'Sandie Go'
-    fill_in 'Email', with: 'sandie@go.com'
+    fill_in 'Name', with: name
+    fill_in 'Email', with: email
 
     attach_file('Cover letter', FILE_PATH)
 
     click_submit
+
+    cover_letter_evaluation = CoverLetterEvaluation.find_by_name(name)
+
+    visit cover_letter_evaluation_path(cover_letter_evaluation.id)
+
+    expect(page).to have_content 'Microfavors Request'
+    expect(page).to have_content "Name: #{cover_letter_evaluation.name}"
   end
 
   scenario 'am i qualified' do

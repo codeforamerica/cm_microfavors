@@ -8,7 +8,7 @@ class CoverLetterEvaluationsController < ApplicationController
   def create
     @cover_letter_evaluation = CoverLetterEvaluation.new(cover_letter_evaluation_params)
 
-    if @cover_letter_evaluation.valid?
+    if @cover_letter_evaluation.save
       render :'jobseekers/next'
     else
       render :new
