@@ -1,11 +1,17 @@
-h1 Microfavors Request
+h1.text-center Microfavors Request
 
-h2 Name: #{@qualification_evaluation.name}
+.row
+  .col-sm-6
+    h3 Name: #{@qualification_evaluation.name}
+  .col-sm-6
+    h3 Question: Job Qualifications Help
 
-h2 Question: Job Qualifications Help
+h3 Document: Resume goes here
 
-h2 Document: Resume goes here
+iframe width='100%' height='500px' src=@qualification_evaluation.resume.url
 
-h2 Response:
-div
-  textarea
+form
+  .form-group
+    label for="response" Response
+    div Provide feedback on the job seeker's question or explain why you can't solve their problem (wrong file, needs to attend the resume workshop for in-depth review
+    textarea#response.form-control rows=4
