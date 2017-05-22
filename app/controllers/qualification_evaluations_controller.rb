@@ -8,7 +8,7 @@ class QualificationEvaluationsController < ApplicationController
   def create
     @qualification_evaluation = QualificationEvaluation.new(qualification_evaluation_params)
 
-    if @qualification_evaluation.valid?
+    if @qualification_evaluation.save
       render :'jobseekers/next'
     else
       render :new
