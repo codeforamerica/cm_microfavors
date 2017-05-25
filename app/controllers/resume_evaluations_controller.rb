@@ -9,6 +9,8 @@ class ResumeEvaluationsController < ApplicationController
     @resume_evaluation = ResumeEvaluation.new(resume_evaluation_params)
 
     if @resume_evaluation.save
+      EvaluationMailer.resume_help.deliver_now
+
       render :'jobseekers/next'
     else
       render :new
